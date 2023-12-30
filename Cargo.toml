@@ -1,0 +1,18 @@
+[package]
+name = "benchmark-frost"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+schnorr_fun = { git = "https://github.com/nickfarrow/secp256kfun.git", rev = "c2e204eb61ea00090b5491c934e0c8df3ed26155", features = ["std", "share_backup", "alloc"], default-features = false}
+sha2 = "0.10"
+rand = { version = "0.8" }
+
+[dev-dependencies]
+criterion = "0.3"
+
+[[bench]]
+name = "frost"
+harness = false
